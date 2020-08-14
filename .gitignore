@@ -8,3 +8,6 @@ projectile-bookmarks.eld
 /.cache
 /.extension
 .lsp-session-*
+.dap*
+tags
+texput.log

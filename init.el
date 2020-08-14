@@ -7,7 +7,7 @@
 (menu-bar-mode -1)
 (setq gc-cons-threshold 100000000)
 ;; This is only for Emacs > 27
-;(setq read-process-output-max (* 1024 1024)) ;; 1mb
+(setq read-process-output-max (* 1024 1024)) ;; 1mb
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 (load-theme 'wombat)
