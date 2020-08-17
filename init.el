@@ -48,6 +48,7 @@
 (load "lsp.el")
 (load "webmode.el")
 (load "javascript.el")
+(load "runner.el")
 
 ;; Custom code after packages
 (add-hook 'prog-mode-hook 'subword-mode)
@@ -61,10 +62,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(completion-category-overrides (quote ((file (styles basic substring)))))
+ '(completion-category-overrides '((file (styles basic substring))))
  '(completion-ignore-case t t)
- '(completion-styles (quote (basic partial-completion substring)))
+ '(completion-styles '(basic partial-completion substring))
  '(delete-selection-mode 1)
+ '(help-at-pt-display-when-idle '(flymake-diagnostic) nil (help-at-pt))
+ '(help-at-pt-timer-delay 0.1)
  '(icomplete-hide-common-prefix nil)
  '(icomplete-mode t)
  '(icomplete-prospects-height 5)
@@ -72,9 +75,31 @@
  '(kill-whole-line 1)
  '(read-buffer-completion-ignore-case t)
  '(read-file-name-completion-ignore-case t)
- '(help-at-pt-timer-delay 0.1)
- '(help-at-pt-display-when-idle '(flymake-diagnostic))
- '(safe-local-variable-values (quote ((elixir-enable-compilation-checking . t)))))
+ '(safe-local-variable-values
+   '((local/script-alist
+      ("dp" . "php artisan deploy production --no-ansi")
+      ("ds" . "php artisan deploy staging --no-ansi")
+      ("du" . "php artisan deploy:run deploy:unlock production --no-ansi && php artisan deploy:run deploy:unlock staging --no-ansi "))
+     (local/script-alist
+      ("p" . "php artisan deploy production --no-ansi")
+      ("s" . "php artisan deploy staging --no-ansi")
+      ("u" . "php artisan deploy:run deploy:unlock production --no-ansi && php artisan deploy:run deploy:unlock staging --no-ansi "))
+     (local/script-alist
+      ("p" . "php artisan deploy production --no-ansi")
+      ("s" . "php artisan deploy staging --no-ansi")
+      ("u" . "php artisan deploy:unlock production --no-ansi && php artisan deploy:unlock staging --no-ansi "))
+     (local/script-alist
+      ("p" . "php artisan deploy production --no-ansi")
+      ("s" . "php artisan deploy staging --no-ansi"))
+     (local/script-alist
+      ("p" . "php artisan deploy production")
+      ("s" . "php artisan deploy staging"))
+     (local/script-alist
+      ("dp" . "php artisan deploy production")
+      ("ds" . "php artisan deploy staging"))
+     (local/script-alist
+      ("d" . "./deploy.sh"))
+     (elixir-enable-compilation-checking . t))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
