@@ -7,7 +7,8 @@
 Used by `local/run-script'."
   :type '(alist :key-type key-sequence
 		:value-type string)
-  :group 'local/runner)
+  :group 'local/runner
+  :safe (lambda (x) t))
 
 (defun local/run-script (key-seq)
   "Run COMMAND from `local/script-alist' based on KEY-SEQ."

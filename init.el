@@ -49,10 +49,16 @@
 (load "webmode.el")
 (load "javascript.el")
 (load "runner.el")
+(load "rust.el")
+(load "filetree.el")
+(load "yaml.el")
+(load "vue.el")
 
 ;; Custom code after packages
 (add-hook 'prog-mode-hook 'subword-mode)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 (show-paren-mode)
+(global-display-line-numbers-mode)
 (add-hook 'icomplete-minibuffer-setup-hook #'visual-line-mode)
 (global-set-key (kbd "M-k") 'kill-whole-line)
 
@@ -76,30 +82,7 @@
  '(read-buffer-completion-ignore-case t)
  '(read-file-name-completion-ignore-case t)
  '(safe-local-variable-values
-   '((local/script-alist
-      ("dp" . "php artisan deploy production --no-ansi")
-      ("ds" . "php artisan deploy staging --no-ansi")
-      ("du" . "php artisan deploy:run deploy:unlock production --no-ansi && php artisan deploy:run deploy:unlock staging --no-ansi "))
-     (local/script-alist
-      ("p" . "php artisan deploy production --no-ansi")
-      ("s" . "php artisan deploy staging --no-ansi")
-      ("u" . "php artisan deploy:run deploy:unlock production --no-ansi && php artisan deploy:run deploy:unlock staging --no-ansi "))
-     (local/script-alist
-      ("p" . "php artisan deploy production --no-ansi")
-      ("s" . "php artisan deploy staging --no-ansi")
-      ("u" . "php artisan deploy:unlock production --no-ansi && php artisan deploy:unlock staging --no-ansi "))
-     (local/script-alist
-      ("p" . "php artisan deploy production --no-ansi")
-      ("s" . "php artisan deploy staging --no-ansi"))
-     (local/script-alist
-      ("p" . "php artisan deploy production")
-      ("s" . "php artisan deploy staging"))
-     (local/script-alist
-      ("dp" . "php artisan deploy production")
-      ("ds" . "php artisan deploy staging"))
-     (local/script-alist
-      ("d" . "./deploy.sh"))
-     (elixir-enable-compilation-checking . t))))
+   '((elixir-enable-compilation-checking . t))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

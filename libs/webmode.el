@@ -1,9 +1,11 @@
 (straight-use-package 'web-mode)
 
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html.eex\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.s?css\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
 
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
@@ -19,6 +21,11 @@
    web-mode-comment-style 2))
 (add-hook 'web-mode-hook  'my-web-mode-hook)
 
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+(setq-default js-indent-level 2)
+
+
 
 (straight-use-package 'emmet-mode)
-(add-hook 'sgml-mode-hook 'emmet-mode)
+(add-hook 'web-mode-hook 'emmet-mode)
