@@ -31,6 +31,7 @@
  'load-path
  (expand-file-name "libs/" user-emacs-directory))
 
+(load "crux.el")
 (load "exec-shell.el")
 (load "inflection.el")
 (load "literate-calc.el")
@@ -61,6 +62,13 @@
 (global-display-line-numbers-mode)
 (add-hook 'icomplete-minibuffer-setup-hook #'visual-line-mode)
 (global-set-key (kbd "M-k") 'kill-whole-line)
+
+(global-set-key (kbd "C-c i") (lambda() (interactive)(find-file "~/.emacs.d/init.el")))
+(global-set-key (kbd "C-c z") (lambda() (interactive)(find-file "~/org/zarin.org")))
+(global-set-key (kbd "C-c m") (lambda() (interactive)(find-file "~/org/mehtaran.org")))
+
+(setq org-todo-keywords
+      '((sequence "TODO" "DOING" "|" "DONE" "CANCELED")))
 
 ;; Custom variables
 (custom-set-variables
