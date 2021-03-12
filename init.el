@@ -10,6 +10,7 @@
 (setq read-process-output-max (* 1024 1024)) ;; 1mb
 (setq make-backup-files nil)
 (setq auto-save-default nil)
+(setq create-lockfiles nil)
 (load-theme 'wombat)
 
 ;; straight.el
@@ -31,6 +32,7 @@
  'load-path
  (expand-file-name "libs/" user-emacs-directory))
 
+(load "icons.el")
 (load "crux.el")
 (load "exec-shell.el")
 (load "inflection.el")
@@ -53,7 +55,10 @@
 (load "rust.el")
 (load "filetree.el")
 (load "yaml.el")
+(load "elm.el")
 (load "vue.el")
+(load "flutter.el")
+(load "rest.el")
 
 ;; Custom code after packages
 (add-hook 'prog-mode-hook 'subword-mode)

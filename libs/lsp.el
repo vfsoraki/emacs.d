@@ -8,8 +8,11 @@
 (setq lsp-enable-file-watchers 1)
 (setq lsp-file-watch-threshold 50000)
 (setq lsp-idle-delay 0.5)
+(setq lsp-intelephense-multi-root nil)
 (add-hook 'php-mode-hook #'lsp-deferred)
 (add-hook 'pyton-mode-hook #'lsp-deferred)
+(add-hook 'elm-mode-hook #'lsp-deferred)
+(add-hook 'dart-mode-hook #'lsp-deferred)
 (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
 
 
