@@ -7,8 +7,10 @@ projectile-bookmarks.eld
 /transient
 /.cache
 /.extension
+/eln-cache
 .lsp-session-*
 .dap*
 tags
 texput.log
 recentf
+projects

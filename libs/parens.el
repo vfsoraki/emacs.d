@@ -1,0 +1,5 @@
+(straight-use-package 'smartparens)
+(require 'smartparens-config)
+(add-hook 'js-mode-hook #'smartparens-mode)
+(add-hook 'elixir-mode-hook #'smartparens-mode)
+(add-hook 'php-mode-hook #'smartparens-mode)

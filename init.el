@@ -85,6 +85,7 @@
  '(completion-ignore-case t t)
  '(completion-styles '(basic partial-completion substring))
  '(delete-selection-mode 1)
+ '(display-fill-column-indicator-column 90)
  '(help-at-pt-display-when-idle '(flymake-diagnostic) nil (help-at-pt))
  '(help-at-pt-timer-delay 0.1)
  '(icomplete-hide-common-prefix nil)
@@ -94,8 +95,8 @@
  '(kill-whole-line 1)
  '(read-buffer-completion-ignore-case t)
  '(read-file-name-completion-ignore-case t)
- '(safe-local-variable-values
-   '((elixir-enable-compilation-checking . t))))
+ '(safe-local-variable-values '((elixir-enable-compilation-checking . t)))
+ '(warning-suppress-log-types '((comp))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

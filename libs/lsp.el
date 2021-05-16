@@ -25,3 +25,4 @@
 
 (straight-use-package 'lsp-treemacs)
 (lsp-treemacs-sync-mode 1)
+(global-set-key (kbd "C-c e") 'lsp-treemacs-errors-list)
