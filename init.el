@@ -32,6 +32,7 @@
  'load-path
  (expand-file-name "libs/" user-emacs-directory))
 
+(load "first.el")
 (load "icons.el")
 (load "crux.el")
 (load "exec-shell.el")
